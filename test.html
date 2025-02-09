@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        overflow: hidden; /* Prevent scrolling on the body */
+      }
+      .scroll-container {
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        overflow-y: scroll; /* Make this the scrollable container */
+        height: 100%; /* Full height for proper scrolling */
+      }
+      .section {
+        scroll-snap-align: start;
+        border: 3px solid black;
+        height: 100vh;
+        width: 100vw;
+        background-color: grey;
+      }
+      .object {
+        position: relative;
+        left: 80%;
+        opacity: 0;
+        height: 300px;
+        border: 1px solid black;
+        transition: all 500ms ease;
+      }
+      .object.shown {
+        left: 0;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scroll-container">
+      <section class="section">
+        <h1>Some Title</h1>
+        <p>Some Text</p>
+        <div class="object">Some more text</div>
+        <div class="object">Some more text</div>
+        <div class="object">Some more text</div>
+      </section>
+      <section class="section">
+        <h1>Some Title</h1>
+        <p>Some Text</p>
+        <div class="object">Some more text</div>
+        <div class="object">Some more text</div>
+        <div class="object">Some more text</div>
+      </section>
+      <section class="section">
+        <h1>Some Title</h1>
+        <p>Some Text</p>
+        <div class="object">Some more text</div>
+        <div class="object">Some more text</div>
+        <div class="object">Some more text</div>
+      </section>
+      <section class="section">
+        <h1>Some Title</h1>
+        <p>Some Text</p>
+        <div class="object">Some more text</div>
+        <div class="object">Some more text</div>
+        <div class="object">Some more text</div>
+      </section>
+      <section class="section">
+        <h1>Some Title</h1>
+        <p>Some Text</p>
+        <div class="object">Some more text</div>
+        <div class="object">Some more text</div>
+        <div class="object">Some more text</div>
+      </section>
+    </div>
+    <script defer>
+      const objects = document.querySelectorAll(".object");
+      console.log(objects);
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          console.log(entry.isIntersecting);
+          entry.target.classList.toggle("shown", entry.isIntersecting);
+          console.log(entry.target.classList);
+        });
+      });
+
+      objects.forEach((object) => {
+        observer.observe(object);
+      });
+    </script>
+  </body>
+</html>

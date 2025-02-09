@@ -1,0 +1,21 @@
+.h1-label {
+  padding: 30px;
+  width: 300px;
+}
+.locus-inline-image_heading {
+  position: relative;
+  fill: red;
+  top: 4px;
+  transition: all 300ms ease;
+  width: 39%;
+}
+.locus-inline-image {
+  position: relative;
+  fill: red;
+  top: 4px;
+  transition: all 300ms ease;
+  width: 60px;
+}
+.about-descriptor {
+  padding: 30px;
+}
