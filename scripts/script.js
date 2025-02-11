@@ -57,16 +57,23 @@ function addClickResponse() {
           e.target === content;
         })
       ) {
+        console.log(box, "clicked");
         box.classList.add("show-more-box");
-        box.children[0].classList.add("show-more-box_label");
-        box.children[1].classList.add("show-more-box_text");
+        box.firstElementChild.classList.add("show");
+        box.children[1].classList.add("show");
+        box.children[1].children[0].classList.add("show-more-box_label");
+        box.children[1].children[1].classList.add("show-more-box_text");
+        console.log(box.children[1].children[1]);
         if (width > 1100) {
           box.style.flex = 10;
         }
       } else {
+        console.log("no box");
         box.classList.remove("show-more-box");
-        box.children[0].classList.remove("show-more-box_label");
-        box.children[1].classList.remove("show-more-box_text");
+        box.firstElementChild.classList.remove("show");
+        box.children[1].classList.remove("show");
+        box.children[1].children[0].classList.remove("show-more-box_label");
+        box.children[1].children[1].classList.remove("show-more-box_text");
         if (width > 1100) {
           box.style.flex = 1;
         }

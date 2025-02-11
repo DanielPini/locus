@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
 }
+html,
 body {
   position: relative;
   cursor: url(../images/red-dot.svg), auto;
@@ -96,10 +97,33 @@ body {
   top: 4px;
   transition: all 300ms ease;
 }
+.box__color-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 0% 15%,
+    rgb(0, 0, 56),
+    rgb(102 51 153 / 50%) 30%,
+    rgb(255 0 0 / 50%) 70%,
+    rgb(255 170 0 / 30%)
+  );
+  opacity: 0;
+  transform: translate(-100% 0);
+  pointer-events: none;
+  transition: transform 800ms ease, opacity 800ms ease;
+}
 .wrapper {
   position: relative;
   width: 100%;
+  height: 100%;
   overflow: hidden;
+  filter: invert(1);
+  pointer-events: none;
+  transform: translate(0, 82%);
+  transition: all 500ms ease;
 }
 .box {
   background: grey;
@@ -124,22 +148,16 @@ body {
   user-select: none;
 }
 .card-label {
-  position: absolute;
-  display: block;
   padding: 30px;
-  top: 100%;
-  translate: 0 -100%;
   user-select: none;
-  transition: all 500ms ease;
+  transition: all 800ms ease;
   text-shadow: 0 0 1px white;
-  filter: invert(1);
 }
 .box_descriptive-text {
-  position: absolute;
-  top: calc(100% - 20px);
   padding: 30px;
+  padding-top: 0;
+  transition: all 800ms ease;
   opacity: 0;
-  transition: all 500ms ease;
 }
 .what-we-do {
   background: center/cover no-repeat url(../images/cool.jpg);
@@ -150,16 +168,16 @@ body {
 .artists {
   background: center/cover no-repeat url(../images/mando_comic.jpg);
 }
+.investment {
+  background: center/cover no-repeat url(../images/scrooge.png);
+}
 .show-more-box_label {
   bottom: unset;
   top: 0;
   translate: 0;
-  filter: invert(1);
 }
 .show-more-box_text {
-  top: 60px;
   opacity: 1;
-  filter: invert(1);
 }
 .show {
   opacity: 1;
@@ -178,15 +196,15 @@ body {
     flex-flow: row nowrap;
   }
   .box {
-    max-width: 1000px;
+    max-width: unset;
     min-width: unset;
     height: 60vh;
     max-height: 500px;
     flex: 1;
-    flex-basis: 10px;
+    flex-basis: 5px;
   }
 
   .box:focus {
-    flex: 20;
+    flex: 40;
   }
 }
