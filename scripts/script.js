@@ -33,9 +33,7 @@ if (width > 1100) {
 // Set desktop box style
 function setBoxStyle() {
   boxes.forEach((box) => {
-    box.style.transform = "translateX(0)";
-    box.style.tranistion = "none";
-    box.style.opacity = 1;
+    box.classList.add("show");
     observer.unobserve(box);
   });
 }
