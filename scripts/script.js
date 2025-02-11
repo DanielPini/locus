@@ -38,11 +38,6 @@ function setBoxStyle() {
   });
 }
 
-// Combine functionality of showMoreBox and showLessBox with logic...
-//
-//
-//
-
 function addClickResponse() {
   window.addEventListener("click", (e) => {
     boxes.forEach((box) => {
