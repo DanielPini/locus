@@ -99,7 +99,8 @@ h3 {
   margin: 10px 20px;
   padding-top: calc(100% / 6);
   list-style: none;
-  transition: all 500 ease;
+  transition: all 500ms ease;
+  transform-origin: bottom;
   color: white;
 }
 .menu-list_item:hover {
