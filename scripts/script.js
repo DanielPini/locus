@@ -36,7 +36,6 @@ function setBoxStyle() {
     box.style.transform = "translateX(0)";
     box.style.tranistion = "none";
     box.style.opacity = 1;
-    box.classList.add("shown");
     observer.unobserve(box);
   });
 }

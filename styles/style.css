@@ -142,7 +142,7 @@ body {
   height: 550px;
 }
 .box:hover {
-  transform: scale(1.01);
+  transform: scale(1.02);
 }
 .box > {
   user-select: none;
@@ -181,7 +181,7 @@ body {
 }
 .show {
   opacity: 1;
-  transform: translateX(0);
+  transform: translate(0);
 }
 .news {
   padding: 30px;
