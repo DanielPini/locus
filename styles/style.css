@@ -55,17 +55,18 @@ body {
   top: 40px;
 }
 .nav {
+  margin: 0;
+  padding: 0;
   width: 300px;
-  height: 100vh;
+  height: 110vh;
   background: red;
   position: absolute;
-  top: -5px;
-  right: -600%;
+  transform: translate(600%, -5%);
   z-index: 2;
   transition: all 0.5s ease;
 }
 .nav.show-nav {
-  right: -5px;
+  transform: translate(5%, -5%);
   transition: all 0.5s ease;
 }
 .nav p {
@@ -74,6 +75,7 @@ body {
   margin-top: 80px;
 }
 .menu-list {
+  padding: 30px 0;
   font-family: var(--default-body-font);
   display: flex;
   flex-flow: column;
@@ -86,8 +88,10 @@ body {
 }
 .menu-list_item {
   margin: 10px 20px;
+  padding-top: calc(100% / 6);
   list-style: none;
   transition: all 500 ease;
+  color: white;
 }
 .menu-list_item:hover {
   transform: scale(1.1);
@@ -109,9 +113,9 @@ body {
   height: 100%;
   background: radial-gradient(
     circle at 0% 15%,
-    rgb(0, 0, 56),
-    rgb(102 51 153 / 50%) 20%,
-    rgb(255 0 0 / 70%) 65%,
+    rgb(0 0 56 / 70%),
+    rgb(102 51 153 / 70%) 20%,
+    rgb(255 0 0 / 70%) 55%,
     rgb(255 170 0 / 50%)
   );
   opacity: 0;
@@ -174,7 +178,7 @@ body {
   background: top/cover no-repeat url(../images/mando_comic.jpg);
 }
 .artists {
-  background: center/cover no-repeat url(../images/mando_comic.jpg);
+  background: center/cover no-repeat url(../images/artists.jpg);
 }
 .investment {
   background: center/cover no-repeat url(../images/scrooge.png);
@@ -192,7 +196,44 @@ body {
   transform: translate(0);
 }
 .news {
+  margin: 10px 10px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.news-item {
+  min-height: 400px;
+  border: 1px solid black;
+  border-radius: 35px;
+  box-shadow: 0 0 10px 0 gray;
+  transition: all 500ms ease;
+  overflow: hidden;
+  z-index: 0;
   padding: 30px;
+  background: blue;
+  color: white;
+  text-shadow: 0 0 1px black;
+  font-size: 1.2rem;
+  font-family: var(--default-body-font);
+  && h2 {
+    font-family: var(--default-heading-font);
+  }
+  && img {
+    filter: invert(1);
+  }
+}
+.news-item:hover {
+  transform: scale(1.01);
+}
+.new-beginnings {
+  background: radial-gradient(
+      circle at 0% 15%,
+      rgba(255, 0, 0, 1),
+      rgba(0, 5, 105, 0.7) 95%
+    ),
+    center/cover url(../images/dramatic_sunrise.png);
+}
+.next {
+  background: red;
 }
 .news-item li {
   padding: 10px;
@@ -202,6 +243,9 @@ body {
   .container {
     display: flex;
     flex-flow: row nowrap;
+  }
+  .news {
+    flex-flow: column nowrap;
   }
   .box {
     max-width: unset;
