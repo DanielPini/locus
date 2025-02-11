@@ -5,6 +5,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 html,
 body {
@@ -110,7 +111,7 @@ h3 {
 .locus-inline-image {
   position: relative;
   fill: red;
-  top: 4px;
+  transform: translate(0, -2px);
   transition: all 300ms ease;
 }
 .box__color-screen {
