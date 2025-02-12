@@ -245,6 +245,13 @@ h3 {
     ),
     center/cover url(../images/dramatic_sunrise.png);
 }
+.callout {
+  margin: 10px 0;
+  padding: 10px;
+  background: white;
+  border: 1px solid black;
+  border-radius: 10px;
+}
 .next {
   background: red;
 }
